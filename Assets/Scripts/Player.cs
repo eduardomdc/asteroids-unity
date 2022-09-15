@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
             Rigidbody2D laserBeam = Instantiate(
                 prefabLaser,
                 playerRigidBody.position,
-                Quaternion.identity
+                Quaternion.Euler(0f, 0f, playerRigidBody.rotation)
             );
 
             laserBeam.velocity = transform.up * laserSpeed;
@@ -50,6 +50,6 @@ public class Player : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }

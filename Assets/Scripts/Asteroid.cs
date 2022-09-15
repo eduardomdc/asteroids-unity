@@ -19,4 +19,9 @@ public class Asteroid : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D body){
+        Destroy(gameObject);
+        Destroy(body.gameObject);
+    }
 }
