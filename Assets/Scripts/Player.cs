@@ -28,6 +28,22 @@ public class Player : MonoBehaviour
 
             laserBeam.velocity = transform.up * laserSpeed;
         }
+        if (transform.position.x > 10f){
+            float newPosX = transform.position.x * -1 + 0.1f;
+            transform.position = new Vector2(newPosX, transform.position.y);
+        }
+        else if (transform.position.x < - 10f){
+            float newPosX = transform.position.x * -1 - 0.1f;
+            transform.position = new Vector2(newPosX, transform.position.y);
+        }
+        else if (transform.position.y > 6f){
+            float newPosY = transform.position.y * -1 + 0.1f;
+            transform.position = new Vector2(transform.position.x, newPosY);
+        }
+        else if (transform.position.y < -6f){
+            float newPosY = transform.position.y * -1 - 0.1f;
+            transform.position = new Vector2(transform.position.x, newPosY);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
